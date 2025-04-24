@@ -1,0 +1,223 @@
+import os
+from string import digits
+def start():
+    os.system('cls')
+    print("Options:")
+    print()
+    print("[1] Add Media")
+    print("[0] Exit")
+    print()
+    choice = int(input(" > "))
+    if choice == 0:
+        exit()
+    elif choice == 1:
+        addmedia()
+    else:
+        start()
+def addmedia():
+    def cata():
+        os.system('cls')
+        print("Enter Name of Anime")
+        name = input(" > ")
+        if name == "/back":
+            addmedia()
+        print("Enter Sub Name of Anime")
+        subname = input(" > ")
+        if subname == "/back":
+            addmedia()
+        print("Enter ID of Anime")
+        id = input(" > ")
+        if id == "/back":
+            addmedia()
+        url = "http://143.47.248.77/web/#/details?id=" + id + "&serverId=5ffad972b3e34394a756f1ec62428de1"
+        backurl = "http://143.47.248.77/Items/" + id + "/Images/Primary"
+        classnamealt = id
+        remove_digits = str.maketrans('', '', digits)
+        classname = classnamealt.translate(remove_digits)
+        with open(os.getcwd() + "\\animecount.conf", 'r') as ac:
+            count = ac.read()
+        count = count
+        print(count)
+        newcount = int(count) + 1
+        with open(os.getcwd() + "\\animecount.conf", 'w') as ac:
+            ac.write(str(newcount))
+        maintemplate = """
+        <div class='""" + classname + """ lr ' id='anime""" + str(newcount) + """'>
+        <a href='""" + url + """'>
+        <p>""" + name + """<br><font size="1">""" + subname + """</font></p>
+        </a>
+        </div>"""
+        subtemplate = """
+        .""" + classname + """{
+        background: linear-gradient(rgba(0, 0, 0, 0),rgba(0, 0, 0, 0.09)),url(""" + backurl + """);
+        background-size: cover;
+        width: 194px;
+        height: 300px;
+        position: relative;
+        float: left;
+        max-width: 200px;
+        padding:6px;}"""
+        with open(os.getcwd() + "\\anime.html", 'a') as animehtml:
+            animehtml.write(maintemplate)
+        with open(os.getcwd() + "\\media.css", 'a') as mediacss:
+            mediacss.write(subtemplate)
+        cata()
+    def catam():
+        os.system('cls')
+        print("Enter Name of Anime Movie")
+        name = input(" > ")
+        if name == "/back":
+            addmedia()
+        print("Enter Sub Name of Anime Movie")
+        subname = input(" > ")
+        if subname == "/back":
+            addmedia()
+        print("Enter ID of Anime Movie")
+        id = input(" > ")
+        if id == "/back":
+            addmedia()
+        url = "http://143.47.248.77/web/#/details?id=" + id + "&serverId=5ffad972b3e34394a756f1ec62428de1"
+        backurl = "http://143.47.248.77/Items/" + id + "/Images/Primary"
+        classnamealt = id
+        remove_digits = str.maketrans('', '', digits)
+        classname = classnamealt.translate(remove_digits)
+        with open(os.getcwd() + "\\animemcount.conf", 'r') as ac:
+            count = ac.read()
+        count = count
+        print(count)
+        newcount = int(count) + 1
+        with open(os.getcwd() + "\\animemcount.conf", 'w') as ac:
+            ac.write(str(newcount))
+        maintemplate = """
+        <div class='""" + classname + """ lr ' id='anime""" + str(newcount) + """'>
+        <a href='""" + url + """'>
+        <p>""" + name + """<br><font size="1">""" + subname + """</font></p>
+        </a>
+        </div>"""
+        subtemplate = """
+        .""" + classname + """{
+        background: linear-gradient(rgba(0, 0, 0, 0),rgba(0, 0, 0, 0.09)),url(""" + backurl + """);
+        background-size: cover;
+        width: 194px;
+        height: 300px;
+        position: relative;
+        float: left;
+        max-width: 200px;
+        padding:6px;}"""
+        with open(os.getcwd() + "\\animemovies.html", 'a') as animehtml:
+            animehtml.write(maintemplate)
+        with open(os.getcwd() + "\\media.css", 'a') as mediacss:
+            mediacss.write(subtemplate)
+        catam()
+    def catm():
+        os.system('cls')
+        print("Enter Name of Movie")
+        name = input(" > ")
+        if name == "/back":
+            addmedia()
+        print("Enter ID of Movie")
+        id = input(" > ")
+        if id == "/back":
+            addmedia()
+        url = "http://143.47.248.77/web/#/details?id=" + id + "&serverId=5ffad972b3e34394a756f1ec62428de1"
+        backurl = "http://143.47.248.77/Items/" + id + "/Images/Primary"
+        classnamealt = id
+        remove_digits = str.maketrans('', '', digits)
+        classname = classnamealt.translate(remove_digits)
+        with open(os.getcwd() + "\\moviecount.conf", 'r') as ac:
+            count = ac.read()
+        count = count
+        print(count)
+        newcount = int(count) + 1
+        with open(os.getcwd() + "\\moviecount.conf", 'w') as ac:
+            ac.write(str(newcount))
+        maintemplate = """
+        <div class='""" + classname + """ lr ' id='anime""" + str(newcount) + """'>
+        <a href='""" + url + """'>
+        <p>""" + name + """<br><font size="1"></font></p>
+        </a>
+        </div>"""
+        subtemplate = """
+        .""" + classname + """{
+        background: linear-gradient(rgba(0, 0, 0, 0),rgba(0, 0, 0, 0.09)),url(""" + backurl + """);
+        background-size: cover;
+        width: 194px;
+        height: 300px;
+        position: relative;
+        float: left;
+        max-width: 200px;
+        padding:6px;}"""
+        with open(os.getcwd() + "\\movies.html", 'a') as animehtml:
+            animehtml.write(maintemplate)
+        with open(os.getcwd() + "\\media.css", 'a') as mediacss:
+            mediacss.write(subtemplate)
+        catm()
+    def cattvs():
+        os.system('cls')
+        print("Enter Name of TV Show")
+        name = input(" > ")
+        if name == "/back":
+            addmedia()
+        print("Enter Sub Name of TV Show")
+        subname = input(" > ")
+        if subname == "/back":
+            addmedia()
+        print("Enter ID of TV Show")
+        id = input(" > ")
+        if id == "/back":
+            addmedia()
+        url = "http://143.47.248.77/web/#/details?id=" + id + "&serverId=5ffad972b3e34394a756f1ec62428de1"
+        backurl = "http://143.47.248.77/Items/" + id + "/Images/Primary"
+        classnamealt = id
+        remove_digits = str.maketrans('', '', digits)
+        classname = classnamealt.translate(remove_digits)
+        with open(os.getcwd() + "\\tvscount.conf", 'r') as ac:
+            count = ac.read()
+        count = count
+        print(count)
+        newcount = int(count) + 1
+        with open(os.getcwd() + "\\tvscount.conf", 'w') as ac:
+            ac.write(str(newcount))
+        maintemplate = """
+        <div class='""" + classname + """ lr ' id='anime""" + str(newcount) + """'>
+        <a href='""" + url + """'>
+        <p>""" + name + """<br><font size="1">""" + subname + """</font></p>
+        </a>
+        </div>"""
+        subtemplate = """
+        .""" + classname + """{
+        background: linear-gradient(rgba(0, 0, 0, 0),rgba(0, 0, 0, 0.09)),url(""" + backurl + """);
+        background-size: cover;
+        width: 194px;
+        height: 300px;
+        position: relative;
+        float: left;
+        max-width: 200px;
+        padding:6px;}"""
+        with open(os.getcwd() + "\\tvshows.html", 'a') as animehtml:
+            animehtml.write(maintemplate)
+        with open(os.getcwd() + "\\media.css", 'a') as mediacss:
+            mediacss.write(subtemplate)
+        cattvs()
+    os.system('cls')
+    print("Categorys:")
+    print()
+    print("[1] Anime")
+    print("[2] Anime Movies")
+    print("[3] Movies")
+    print("[4] TV Shows")
+    print()
+    cat = int(input(" > "))
+    if cat == "/back":
+        start()
+    elif cat == 1:
+        cata()    
+    elif cat == 2:
+        catam()
+    elif cat == 3:
+        catm()
+    elif cat == 4:
+        cattvs()
+    else:
+        addmedia()
+start()
