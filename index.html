@@ -137,6 +137,24 @@
 </div>
 
 <script>
+      if (location.protocol !== "http:") {
+          location.protocol = "http:";}
+        
+
+  try {
+  if (window.location.protocol != "http:") {
+   window.location.protocol = "http:";
+   window.location.reload();}
+  }
+  if (location.protocol !== "http:") {
+          location.protocol = "http:";}
+        
+
+  try {
+  if (window.location.protocol != "http:") {
+   window.location.protocol = "http:";
+   window.location.reload();}
+  }
   document.getElementById("titlea").style.display = "none";
   document.getElementById("titleam").style.display = "none";
   document.getElementById("titlem").style.display = "none";
