@@ -1,5 +1,8 @@
 import os
 from string import digits
+from parallel_sync import wget
+import requests as req
+from pathlib import Path
 def start():
     os.system('cls')
     print("Options:")
@@ -21,19 +24,29 @@ def addmedia():
         name = input(" > ")
         if name == "/back":
             addmedia()
-        print("Enter Sub Name of Anime")
-        subname = input(" > ")
-        if subname == "/back":
-            addmedia()
         print("Enter ID of Anime")
         id = input(" > ")
         if id == "/back":
             addmedia()
-        url = "http://143.47.248.77/web/#/details?id=" + id + "&serverId=5ffad972b3e34394a756f1ec62428de1"
-        backurl = "http://143.47.248.77/Items/" + id + "/Images/Primary"
         classnamealt = id
         remove_digits = str.maketrans('', '', digits)
         classname = classnamealt.translate(remove_digits)
+        url = "http://143.47.248.77/web/#/details?id=" + id + "&serverId=5ffad972b3e34394a756f1ec62428de1"
+        backurl = "http://143.47.248.77/Items/" + id + "/Images/Primary"
+        output_file = os.getcwd() + "\\posters\\" + id + ".jpg"
+        output_path = os.getcwd() + "\\posters\\"
+        try:
+            Path(output_path).mkdir()
+        except:
+            print("Skipping Folder Creation Folder Already Exists")
+        try:
+            Path(output_file).touch()
+            data = req.get(backurl)
+            with open(output_file, 'wb')as file:
+                file.write(data.content)
+            poster = "'\\\\posters\\\\" + id + ".jpg'"
+        except:
+            print("Skipping File Creation File Already Exists")
         with open(os.getcwd() + "\\animecount.conf", 'r') as ac:
             count = ac.read()
         count = count
@@ -44,12 +57,12 @@ def addmedia():
         maintemplate = """
         <div class='""" + classname + """ lr ' id='anime""" + str(newcount) + """'>
         <a href='""" + url + """'>
-        <p>""" + name + """<br><font size="1">""" + subname + """</font></p>
+        <p>""" + name + """<br><font size="1"></font></p>
         </a>
         </div>"""
         subtemplate = """
         .""" + classname + """{
-        background: linear-gradient(rgba(0, 0, 0, 0),rgba(0, 0, 0, 0.09)),url(""" + backurl + """);
+        background: linear-gradient(rgba(0, 0, 0, 0),rgba(0, 0, 0, 0.09)),url(""" + poster + """);
         background-size: cover;
         width: 194px;
         height: 300px;
@@ -68,19 +81,29 @@ def addmedia():
         name = input(" > ")
         if name == "/back":
             addmedia()
-        print("Enter Sub Name of Anime Movie")
-        subname = input(" > ")
-        if subname == "/back":
-            addmedia()
         print("Enter ID of Anime Movie")
         id = input(" > ")
         if id == "/back":
             addmedia()
-        url = "http://143.47.248.77/web/#/details?id=" + id + "&serverId=5ffad972b3e34394a756f1ec62428de1"
-        backurl = "http://143.47.248.77/Items/" + id + "/Images/Primary"
         classnamealt = id
         remove_digits = str.maketrans('', '', digits)
         classname = classnamealt.translate(remove_digits)
+        url = "http://143.47.248.77/web/#/details?id=" + id + "&serverId=5ffad972b3e34394a756f1ec62428de1"
+        backurl = "http://143.47.248.77/Items/" + id + "/Images/Primary"
+        output_file = os.getcwd() + "\\posters\\" + id + ".jpg"
+        output_path = os.getcwd() + "\\posters\\"
+        try:
+            Path(output_path).mkdir()
+        except:
+            print("Skipping Folder Creation Folder Already Exists")
+        try:
+            Path(output_file).touch()
+            data = req.get(backurl)
+            with open(output_file, 'wb')as file:
+                file.write(data.content)
+            poster = "'\\\\posters\\\\" + id + ".jpg'"
+        except:
+            print("Skipping File Creation File Already Exists")
         with open(os.getcwd() + "\\animemcount.conf", 'r') as ac:
             count = ac.read()
         count = count
@@ -91,12 +114,12 @@ def addmedia():
         maintemplate = """
         <div class='""" + classname + """ lr ' id='anime""" + str(newcount) + """'>
         <a href='""" + url + """'>
-        <p>""" + name + """<br><font size="1">""" + subname + """</font></p>
+        <p>""" + name + """<br><font size="1"></font></p>
         </a>
         </div>"""
         subtemplate = """
         .""" + classname + """{
-        background: linear-gradient(rgba(0, 0, 0, 0),rgba(0, 0, 0, 0.09)),url(""" + backurl + """);
+        background: linear-gradient(rgba(0, 0, 0, 0),rgba(0, 0, 0, 0.09)),url(""" + poster + """);
         background-size: cover;
         width: 194px;
         height: 300px;
@@ -119,11 +142,25 @@ def addmedia():
         id = input(" > ")
         if id == "/back":
             addmedia()
-        url = "http://143.47.248.77/web/#/details?id=" + id + "&serverId=5ffad972b3e34394a756f1ec62428de1"
-        backurl = "http://143.47.248.77/Items/" + id + "/Images/Primary"
         classnamealt = id
         remove_digits = str.maketrans('', '', digits)
         classname = classnamealt.translate(remove_digits)
+        url = "http://143.47.248.77/web/#/details?id=" + id + "&serverId=5ffad972b3e34394a756f1ec62428de1"
+        backurl = "http://143.47.248.77/Items/" + id + "/Images/Primary"
+        output_file = os.getcwd() + "\\posters\\" + id + ".jpg"
+        output_path = os.getcwd() + "\\posters\\"
+        try:
+            Path(output_path).mkdir()
+        except:
+            print("Skipping Folder Creation Folder Already Exists")
+        try:
+            Path(output_file).touch()
+            data = req.get(backurl)
+            with open(output_file, 'wb')as file:
+                file.write(data.content)
+            poster = "'\\\\posters\\\\" + id + ".jpg'"
+        except:
+            print("Skipping File Creation File Already Exists")
         with open(os.getcwd() + "\\moviecount.conf", 'r') as ac:
             count = ac.read()
         count = count
@@ -139,7 +176,7 @@ def addmedia():
         </div>"""
         subtemplate = """
         .""" + classname + """{
-        background: linear-gradient(rgba(0, 0, 0, 0),rgba(0, 0, 0, 0.09)),url(""" + backurl + """);
+        background: linear-gradient(rgba(0, 0, 0, 0),rgba(0, 0, 0, 0.09)),url(""" + poster + """);
         background-size: cover;
         width: 194px;
         height: 300px;
@@ -158,19 +195,29 @@ def addmedia():
         name = input(" > ")
         if name == "/back":
             addmedia()
-        print("Enter Sub Name of TV Show")
-        subname = input(" > ")
-        if subname == "/back":
-            addmedia()
         print("Enter ID of TV Show")
         id = input(" > ")
         if id == "/back":
             addmedia()
-        url = "http://143.47.248.77/web/#/details?id=" + id + "&serverId=5ffad972b3e34394a756f1ec62428de1"
-        backurl = "http://143.47.248.77/Items/" + id + "/Images/Primary"
         classnamealt = id
         remove_digits = str.maketrans('', '', digits)
         classname = classnamealt.translate(remove_digits)
+        url = "http://143.47.248.77/web/#/details?id=" + id + "&serverId=5ffad972b3e34394a756f1ec62428de1"
+        backurl = "http://143.47.248.77/Items/" + id + "/Images/Primary"
+        output_file = os.getcwd() + "\\posters\\" + id + ".jpg"
+        output_path = os.getcwd() + "\\posters\\"
+        try:
+            Path(output_path).mkdir()
+        except:
+            print("Skipping Folder Creation Folder Already Exists")
+        try:
+            Path(output_file).touch()
+            data = req.get(backurl)
+            with open(output_file, 'wb')as file:
+                file.write(data.content)
+            poster = "'\\\\posters\\\\" + id + ".jpg'"
+        except:
+            print("Skipping File Creation File Already Exists")
         with open(os.getcwd() + "\\tvscount.conf", 'r') as ac:
             count = ac.read()
         count = count
@@ -181,12 +228,12 @@ def addmedia():
         maintemplate = """
         <div class='""" + classname + """ lr ' id='anime""" + str(newcount) + """'>
         <a href='""" + url + """'>
-        <p>""" + name + """<br><font size="1">""" + subname + """</font></p>
+        <p>""" + name + """<br><font size="1"></font></p>
         </a>
         </div>"""
         subtemplate = """
         .""" + classname + """{
-        background: linear-gradient(rgba(0, 0, 0, 0),rgba(0, 0, 0, 0.09)),url(""" + backurl + """);
+        background: linear-gradient(rgba(0, 0, 0, 0),rgba(0, 0, 0, 0.09)),url(""" + poster + """);
         background-size: cover;
         width: 194px;
         height: 300px;
