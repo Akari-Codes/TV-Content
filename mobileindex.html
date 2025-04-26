@@ -11,6 +11,8 @@
   font-weight: bolder;
   
 }
+.lr {left:150px;text-align: center;align-self: center;align-items: center;float:none;}
+.item-container {text-align: center;align-self: center;align-items: center;float:inline-end;}
 ::-webkit-scrollbar {
   width: 10px;
   background: rgb(27, 27, 27);
@@ -35,17 +37,20 @@
 .header h1 {text-align:center}
 .header option {text-align:center}
 .mediaselector {color:white;background-color: magenta;border:none;font-size: 17px;border-radius: 5px;}
+.header a {text-decoration: none;text-align: center;color:white;background-color: magenta;border: 5px solid magenta;font-size: 17px;border-radius: 5px;}
+.header a:hover{background-color: purple;border-color: purple;}
 </style>
 <div class="header">
-<h1>Astil Media TV Media Contents</h1><br><br>
+<h1>Astil Media TV Media Contents</h1><br><br><br>
+<a href="http://143.47.248.77/">Astil Media TV</a><br><br>
 <select class="mediaselector"name="media" id="media" onchange="remedia()">
   <option value="all">All Media</option>
   <option value="anime">Anime</option>
   <option value="animemovies">Anime Movies</option>
   <option value="movies">Movies</option>
   <option value="tvshows">TV Shows</option>
-</select><br>
-<p id="topcount" style="text-align: center;"></p><br>
+</select><br><br>
+<p id="topcount" style="text-align: center;"></p>
 </div>
 <div id="a">
   <div id="titletwo">
