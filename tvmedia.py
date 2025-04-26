@@ -54,6 +54,22 @@ def addmedia():
         newcount = int(count) + 1
         with open(os.getcwd() + "\\animecount.conf", 'w') as ac:
             ac.write(str(newcount))
+        with open(os.getcwd() + "\\animecount.conf", 'r') as acs:
+            animecounts = acs.read()
+        with open(os.getcwd() + "\\animemcount.conf", 'r') as amcs:
+            animemcounts = amcs.read()
+        with open(os.getcwd() + "\\moviecount.conf", 'r') as mcs:
+            moviecounts = mcs.read()
+        with open(os.getcwd() + "\\tvscount.conf", 'r') as tvscs:
+            tvshowcounts = tvscs.read()
+        tabscount = """
+function getanimecount() {var animecount = '""" + animecounts + """';return animecount;};
+function getmoviecount() {var moviecount = '""" + moviecounts + """';return moviecount;};
+function getamcount() {var amcount = '""" + animemcounts + """';return amcount;};
+function gettvscount() {var tvscount = '""" + tvshowcounts + """';return tvscount;};       
+"""
+        with open(os.getcwd() + "\\morejs.js", 'w') as mjs:
+            mjs.write(tabscount)
         maintemplate = """
         <div class='""" + classname + """ lr ' id='anime""" + str(newcount) + """'>
         <a href='""" + url + """'>
@@ -111,6 +127,22 @@ def addmedia():
         newcount = int(count) + 1
         with open(os.getcwd() + "\\animemcount.conf", 'w') as ac:
             ac.write(str(newcount))
+        with open(os.getcwd() + "\\animecount.conf", 'r') as acs:
+            animecounts = acs.read()
+        with open(os.getcwd() + "\\animemcount.conf", 'r') as amcs:
+            animemcounts = amcs.read()
+        with open(os.getcwd() + "\\moviecount.conf", 'r') as mcs:
+            moviecounts = mcs.read()
+        with open(os.getcwd() + "\\tvscount.conf", 'r') as tvscs:
+            tvshowcounts = tvscs.read()
+        tabscount = """
+function getanimecount() {var animecount = '""" + animecounts + """';return animecount;};
+function getmoviecount() {var moviecount = '""" + moviecounts + """';return moviecount;};
+function getamcount() {var amcount = '""" + animemcounts + """';return amcount;};
+function gettvscount() {var tvscount = '""" + tvshowcounts + """';return tvscount;};       
+"""
+        with open(os.getcwd() + "\\morejs.js", 'w') as mjs:
+            mjs.write(tabscount)
         maintemplate = """
         <div class='""" + classname + """ lr ' id='anime""" + str(newcount) + """'>
         <a href='""" + url + """'>
@@ -168,6 +200,22 @@ def addmedia():
         newcount = int(count) + 1
         with open(os.getcwd() + "\\moviecount.conf", 'w') as ac:
             ac.write(str(newcount))
+        with open(os.getcwd() + "\\animecount.conf", 'r') as acs:
+            animecounts = acs.read()
+        with open(os.getcwd() + "\\animemcount.conf", 'r') as amcs:
+            animemcounts = amcs.read()
+        with open(os.getcwd() + "\\moviecount.conf", 'r') as mcs:
+            moviecounts = mcs.read()
+        with open(os.getcwd() + "\\tvscount.conf", 'r') as tvscs:
+            tvshowcounts = tvscs.read()
+        tabscount = """
+function getanimecount() {var animecount = '""" + animecounts + """';return animecount;};
+function getmoviecount() {var moviecount = '""" + moviecounts + """';return moviecount;};
+function getamcount() {var amcount = '""" + animemcounts + """';return amcount;};
+function gettvscount() {var tvscount = '""" + tvshowcounts + """';return tvscount;};       
+"""
+        with open(os.getcwd() + "\\morejs.js", 'w') as mjs:
+            mjs.write(tabscount)
         maintemplate = """
         <div class='""" + classname + """ lr ' id='anime""" + str(newcount) + """'>
         <a href='""" + url + """'>
@@ -225,6 +273,22 @@ def addmedia():
         newcount = int(count) + 1
         with open(os.getcwd() + "\\tvscount.conf", 'w') as ac:
             ac.write(str(newcount))
+        with open(os.getcwd() + "\\animecount.conf", 'r') as acs:
+            animecounts = acs.read()
+        with open(os.getcwd() + "\\animemcount.conf", 'r') as amcs:
+            animemcounts = amcs.read()
+        with open(os.getcwd() + "\\moviecount.conf", 'r') as mcs:
+            moviecounts = mcs.read()
+        with open(os.getcwd() + "\\tvscount.conf", 'r') as tvscs:
+            tvshowcounts = tvscs.read()
+        tabscount = """
+function getanimecount() {var animecount = '""" + animecounts + """';return animecount;};
+function getmoviecount() {var moviecount = '""" + moviecounts + """';return moviecount;};
+function getamcount() {var amcount = '""" + animemcounts + """';return amcount;};
+function gettvscount() {var tvscount = '""" + tvshowcounts + """';return tvscount;};       
+"""
+        with open(os.getcwd() + "\\morejs.js", 'w') as mjs:
+            mjs.write(tabscount)
         maintemplate = """
         <div class='""" + classname + """ lr ' id='anime""" + str(newcount) + """'>
         <a href='""" + url + """'>
