@@ -30,28 +30,28 @@
   background: magenta;
 }
 .lr a {margin-left: 20%;}
-.header {text-align:right}
-.header select {text-align:left;float:left}
-.header h1 {text-align:left;}
-.header option {text-align:left}
+.header {text-align:center}
+.header select {text-align:center}
+.header h1 {text-align:center}
+.header option {text-align:center}
 .mediaselector {color:white;background-color: magenta;border:none;font-size: 17px;border-radius: 5px;}
 </style>
 <div class="header">
-<h1>Astil Media TV Media Contents</h1>
+<h1>Astil Media TV Media Contents</h1><br><br>
 <select class="mediaselector"name="media" id="media" onchange="remedia()">
   <option value="all">All Media</option>
   <option value="anime">Anime</option>
   <option value="animemovies">Anime Movies</option>
   <option value="movies">Movies</option>
   <option value="tvshows">TV Shows</option>
-</select>
-<p id="topcount"></p><br>
+</select><br>
+<p id="topcount" style="text-align: center;"></p><br>
 </div>
 <div id="a">
   <div id="titletwo">
-    <h2  id="titletwo">All</h2></div>
+    <h2  id="titletwo" style="text-align: center;">All</h2></div>
     <div id="titlea">
-    <h2 id="title">Anime</h2></div>
+    <h2 id="title" style="text-align: center;">Anime</h2></div>
 <div class="item-contatiner">
   <html> 
     <head> 
@@ -76,7 +76,7 @@
 
 <div id="am">
   <div id="titleam">
-  <h2 id="title">Anime Movies</h2></div>
+  <h2 id="title" style="text-align: center;">Anime Movies</h2></div>
 <div class="item-contatiner">
   <html> 
     <head> 
@@ -100,7 +100,7 @@
 </div></div>
 <div id="m">
   <div id="titlem">
-  <h2 id="title">Movies</h2></div>
+  <h2 id="title" style="text-align: center;">Movies</h2></div>
 <div class="item-contatiner">
   <html> 
     <head> 
@@ -124,7 +124,7 @@
 </div></div>
 <div id="tvs">
   <div id="titletvs">
-  <h2 id="title">TV Shows</h2></div>
+  <h2 id="title" style="text-align: center;">TV Shows</h2></div>
 <div class="item-contatiner">
   <html> 
     <head> 
@@ -152,16 +152,6 @@
 <p style="text-align: center;" id="botcount"></p>
 <script src="morejs.js"></script>
 <script>
-  var w = window.innerWidth;
-  var h = window.innerHeight;
-  if (w <= 624) {
-    window.open("./mobileindex.html")
-
-  }
-  if (h <= 624) {
-    window.open("./mobileindex.html")
-  
-  }
   document.getElementById("titlea").style.display = "none";
   document.getElementById("titleam").style.display = "none";
   document.getElementById("titlem").style.display = "none";
