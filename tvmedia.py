@@ -33,8 +33,8 @@ def addmedia():
         classname = classnamealt.translate(remove_digits)
         url = "http://143.47.248.77/web/#/details?id=" + id + "&serverId=5ffad972b3e34394a756f1ec62428de1"
         backurl = "http://143.47.248.77/Items/" + id + "/Images/Primary"
-        output_file = os.getcwd() + "\\posters\\" + id + ".jpg"
-        output_path = os.getcwd() + "\\posters\\"
+        output_file = os.getcwd() + "\\posters\\anime\\" + id + ".jpg"
+        output_path = os.getcwd() + "\\posters\\anime\\"
         try:
             Path(output_path).mkdir()
         except:
@@ -44,7 +44,7 @@ def addmedia():
             data = req.get(backurl)
             with open(output_file, 'wb')as file:
                 file.write(data.content)
-            poster = "'\\\\posters\\\\" + id + ".jpg'"
+            poster = "'\\\\posters\\\\anime\\\\" + id + ".jpg'"
         except:
             print("Skipping File Creation File Already Exists")
         with open(os.getcwd() + "\\animecount.conf", 'r') as ac:
@@ -106,8 +106,8 @@ function gettvscount() {var tvscount = '""" + tvshowcounts + """';return tvscoun
         classname = classnamealt.translate(remove_digits)
         url = "http://143.47.248.77/web/#/details?id=" + id + "&serverId=5ffad972b3e34394a756f1ec62428de1"
         backurl = "http://143.47.248.77/Items/" + id + "/Images/Primary"
-        output_file = os.getcwd() + "\\posters\\" + id + ".jpg"
-        output_path = os.getcwd() + "\\posters\\"
+        output_file = os.getcwd() + "\\posters\\animemovie\\" + id + ".jpg"
+        output_path = os.getcwd() + "\\posters\\animemovie\\"
         try:
             Path(output_path).mkdir()
         except:
@@ -117,7 +117,7 @@ function gettvscount() {var tvscount = '""" + tvshowcounts + """';return tvscoun
             data = req.get(backurl)
             with open(output_file, 'wb')as file:
                 file.write(data.content)
-            poster = "'\\\\posters\\\\" + id + ".jpg'"
+            poster = "'\\\\posters\\\\animemovie\\\\" + id + ".jpg'"
         except:
             print("Skipping File Creation File Already Exists")
         with open(os.getcwd() + "\\animemcount.conf", 'r') as ac:
@@ -179,8 +179,8 @@ function gettvscount() {var tvscount = '""" + tvshowcounts + """';return tvscoun
         classname = classnamealt.translate(remove_digits)
         url = "http://143.47.248.77/web/#/details?id=" + id + "&serverId=5ffad972b3e34394a756f1ec62428de1"
         backurl = "http://143.47.248.77/Items/" + id + "/Images/Primary"
-        output_file = os.getcwd() + "\\posters\\" + id + ".jpg"
-        output_path = os.getcwd() + "\\posters\\"
+        output_file = os.getcwd() + "\\posters\\movie\\" + id + ".jpg"
+        output_path = os.getcwd() + "\\posters\\movie\\"
         try:
             Path(output_path).mkdir()
         except:
@@ -190,7 +190,7 @@ function gettvscount() {var tvscount = '""" + tvshowcounts + """';return tvscoun
             data = req.get(backurl)
             with open(output_file, 'wb')as file:
                 file.write(data.content)
-            poster = "'\\\\posters\\\\" + id + ".jpg'"
+            poster = "'\\\\posters\\\\movie\\\\" + id + ".jpg'"
         except:
             print("Skipping File Creation File Already Exists")
         with open(os.getcwd() + "\\moviecount.conf", 'r') as ac:
@@ -252,8 +252,8 @@ function gettvscount() {var tvscount = '""" + tvshowcounts + """';return tvscoun
         classname = classnamealt.translate(remove_digits)
         url = "http://143.47.248.77/web/#/details?id=" + id + "&serverId=5ffad972b3e34394a756f1ec62428de1"
         backurl = "http://143.47.248.77/Items/" + id + "/Images/Primary"
-        output_file = os.getcwd() + "\\posters\\" + id + ".jpg"
-        output_path = os.getcwd() + "\\posters\\"
+        output_file = os.getcwd() + "\\posters\\tvshow\\" + id + ".jpg"
+        output_path = os.getcwd() + "\\posters\\tvshow\\"
         try:
             Path(output_path).mkdir()
         except:
@@ -263,7 +263,7 @@ function gettvscount() {var tvscount = '""" + tvshowcounts + """';return tvscoun
             data = req.get(backurl)
             with open(output_file, 'wb')as file:
                 file.write(data.content)
-            poster = "'\\\\posters\\\\" + id + ".jpg'"
+            poster = "'\\\\posters\\\\tvshow\\\\" + id + ".jpg'"
         except:
             print("Skipping File Creation File Already Exists")
         with open(os.getcwd() + "\\tvscount.conf", 'r') as ac:
