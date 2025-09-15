@@ -1,0 +1,1 @@
+{"type":"https://tools.ietf.org/html/rfc9110#section-15.5.1","title":"One or more validation errors occurred.","status":400,"errors":{"itemId":["The value \u0027Blue Exorcist\u0027 is not valid."]},"traceId":"00-9b5aed1fad7906d288b0e18fa8a4b845-c44d55f6780f2998-00"}
