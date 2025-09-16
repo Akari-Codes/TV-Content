@@ -1,5 +1,5 @@
 
-function getanimecount() {var animecount = '175';return animecount;};
+function getanimecount() {var animecount = '0';return animecount;};
 function getmoviecount() {var moviecount = '0';return moviecount;};
 function getamcount() {var amcount = '0';return amcount;};
 function gettvscount() {var tvscount = '0';return tvscount;};       
