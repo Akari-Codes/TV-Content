@@ -87,6 +87,7 @@ function gettvscount() {var tvscount = '""" + tvshowcounts + """';return tvscoun
         max-width: 200px;
         padding:6px;}"""
         with open(os.getcwd() + "\\anime.html", 'a') as animehtml:
+            file.seek(0)
             animehtml.write(maintemplate)
         with open(os.getcwd() + "\\media.css", 'a') as mediacss:
             mediacss.write(subtemplate)
@@ -160,6 +161,7 @@ function gettvscount() {var tvscount = '""" + tvshowcounts + """';return tvscoun
         max-width: 200px;
         padding:6px;}"""
         with open(os.getcwd() + "\\animemovies.html", 'a') as animehtml:
+            file.seek(0)
             animehtml.write(maintemplate)
         with open(os.getcwd() + "\\media.css", 'a') as mediacss:
             mediacss.write(subtemplate)
@@ -233,6 +235,7 @@ function gettvscount() {var tvscount = '""" + tvshowcounts + """';return tvscoun
         max-width: 200px;
         padding:6px;}"""
         with open(os.getcwd() + "\\movies.html", 'a') as animehtml:
+            file.seek(0)
             animehtml.write(maintemplate)
         with open(os.getcwd() + "\\media.css", 'a') as mediacss:
             mediacss.write(subtemplate)
@@ -306,6 +309,7 @@ function gettvscount() {var tvscount = '""" + tvshowcounts + """';return tvscoun
         max-width: 200px;
         padding:6px;}"""
         with open(os.getcwd() + "\\tvshows.html", 'a') as animehtml:
+            file.seek(0)
             animehtml.write(maintemplate)
         with open(os.getcwd() + "\\media.css", 'a') as mediacss:
             mediacss.write(subtemplate)
