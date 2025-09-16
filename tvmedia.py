@@ -3,6 +3,7 @@ from string import digits
 from parallel_sync import wget
 import requests as req
 from pathlib import Path
+import pickle
 def start():
     os.system('cls')
     print("Options:")
