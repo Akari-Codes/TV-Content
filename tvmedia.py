@@ -4,6 +4,7 @@ from parallel_sync import wget
 import requests as req
 from pathlib import Path
 import pickle
+import json
 def start():
     os.system('cls')
     print("Options:")
@@ -87,8 +88,10 @@ function gettvscount() {var tvscount = '""" + tvshowcounts + """';return tvscoun
         float: left;
         max-width: 200px;
         padding:6px;}"""
-        with open(os.getcwd() + "\\anime.html", 'r+') as animehtml:
-            maintemplate = maintemplate + animehtml.read()
+        with open(os.getcwd() + "\\anime.html", 'r') as animehtml:
+            animehtml_read = animehtml.read()
+        with open(os.getcwd() + "\\anime.html", 'w') as animehtml:
+            maintemplate = maintemplate + animehtml_read
             print(maintemplate)
             animehtml.write(maintemplate)
         with open(os.getcwd() + "\\media.css", 'a') as mediacss:
